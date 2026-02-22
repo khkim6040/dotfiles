@@ -14,7 +14,7 @@ macos/       AeroSpace, Karabiner
 ## 설치
 
 ```bash
-git clone https://github.com/<USER>/dotfiles.git ~/dotfiles
+git clone https://github.com/khkim6040/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
