@@ -62,7 +62,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "  git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
   fi
   if [ ! -d "$ZSH_CUSTOM/plugins/you-should-use" ]; then
-    echo "  git clone https://github.com/MichaelAqworworx/zsh-you-should-use $ZSH_CUSTOM/plugins/you-should-use"
+    echo "  git clone https://github.com/MichaelAquilina/zsh-you-should-use $ZSH_CUSTOM/plugins/you-should-use"
   fi
   echo ""
 fi
