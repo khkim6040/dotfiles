@@ -11,6 +11,9 @@ tools/       npmrc, testcontainers, gh CLI
 macos/       AeroSpace, Karabiner
 ```
 
+### VSCode
+https://github.com/khkim6040/vscode-settings
+
 ## 설치
 
 ```bash
