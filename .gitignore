@@ -1,0 +1,11 @@
+.DS_Store
+*.pem
+*.key
+*.p12
+*history
+*_history
+*.swp
+*.swo
+*~
+.env
+.env.*
