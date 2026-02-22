@@ -1,44 +1,3 @@
-Host docker162
-  HostName 127.0.0.1
-  Port 16222
-  User workspace
-  IdentityFile ~/.ssh/id_ed25519
-
-Host CSED312
-	HostName 141.223.181.31
-	User stu15
-
-Host resume
-	HostName ec2-13-209-13-119.ap-northeast-2.compute.amazonaws.com 
-	User ubuntu
-	IdentityFile ~/.ssh/resume.pem
-
-Host Annapurna
-    Hostname omnia.postech.ac.kr
-    Port 4500
-    User gwanho 
-
-Host Rockies-master
-    HostName 141.223.19.58
-    User imlab
-    Port 2917
-    ProxyJump Annapurna
-
-Host Rockies-1
-    HostName 10.2.13.101
-    User gwanho
-    ProxyJump Rockies-master
-
-Host Rockies-6
-	HostName 10.2.13.106
-	User omnia
-	ProxyJump Rockies-master
-
-Host postech2
-	HostName programming2.postech.ac.kr
-	User khkim6040	
-	Port 2022
-
 Host popo
 	HostName ec2-15-164-235-45.ap-northeast-2.compute.amazonaws.com
 	User ec2-user
@@ -50,9 +9,3 @@ Host github.com
   User git
   IdentityFile ~/.ssh/id_rsa_khkim6040
   IdentitiesOnly yes
-
-# 부계정 (khkim6040-su)
-Host github.com-su
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa	
