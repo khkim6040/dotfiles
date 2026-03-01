@@ -1,2 +1,1 @@
-. "/Users/admin/.deno/env"
-. "$HOME/.cargo/env"
+. "$HOME/.deno/env"

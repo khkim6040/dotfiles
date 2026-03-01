@@ -39,7 +39,6 @@ link_file "$DOTFILES_DIR/git/ssh_config"  "$HOME/.ssh/config"
 
 # Tools
 link_file "$DOTFILES_DIR/tools/.npmrc"                    "$HOME/.npmrc"
-link_file "$DOTFILES_DIR/tools/.testcontainers.properties" "$HOME/.testcontainers.properties"
 link_file "$DOTFILES_DIR/tools/gh_config.yml"             "$HOME/.config/gh/config.yml"
 
 # macOS
