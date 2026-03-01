@@ -45,6 +45,20 @@ link_file "$DOTFILES_DIR/tools/gh_config.yml"             "$HOME/.config/gh/conf
 link_file "$DOTFILES_DIR/macos/.aerospace.toml"   "$HOME/.aerospace.toml"
 link_file "$DOTFILES_DIR/macos/karabiner.json"    "$HOME/.config/karabiner/karabiner.json"
 
+# macOS keyboard shortcuts
+if [ "$(uname)" = "Darwin" ]; then
+  echo ""
+  echo "--- macOS Keyboard Shortcuts ---"
+  if [ -f "$DOTFILES_DIR/macos/symbolichotkeys.plist" ]; then
+    defaults import com.apple.symbolichotkeys "$DOTFILES_DIR/macos/symbolichotkeys.plist"
+    echo "  IMPORT  symbolichotkeys.plist"
+  fi
+  defaults write -g NSUserKeyEquivalents -dict-add "Minimize" '@~$9'
+  echo "  SET     Minimize → Cmd+Option+Shift+9"
+  echo ""
+  echo "  NOTE: Log out and back in for keyboard shortcut changes to take effect."
+fi
+
 echo ""
 echo "=== Done ==="
 echo ""
