@@ -45,6 +45,19 @@ link_file "$DOTFILES_DIR/tools/gh_config.yml"             "$HOME/.config/gh/conf
 link_file "$DOTFILES_DIR/macos/.aerospace.toml"   "$HOME/.aerospace.toml"
 link_file "$DOTFILES_DIR/macos/karabiner.json"    "$HOME/.config/karabiner/karabiner.json"
 
+# iTerm2 color presets
+if [ -d "$DOTFILES_DIR/iterm2" ]; then
+  echo ""
+  echo "--- iTerm2 Color Presets ---"
+  for preset in "$DOTFILES_DIR"/iterm2/*.itermcolors; do
+    [ -f "$preset" ] || continue
+    name="$(basename "$preset" .itermcolors)"
+    open "$preset"
+    echo "  IMPORT  $name"
+  done
+  echo "  NOTE: Select the preset in iTerm2 → Settings → Profiles → Colors → Color Presets..."
+fi
+
 # macOS keyboard shortcuts
 if [ "$(uname)" = "Darwin" ]; then
   echo ""
