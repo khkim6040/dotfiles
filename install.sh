@@ -44,8 +44,11 @@ link_file "$DOTFILES_DIR/tools/gh_config.yml"             "$HOME/.config/gh/conf
 link_file "$DOTFILES_DIR/macos/.aerospace.toml"   "$HOME/.aerospace.toml"
 link_file "$DOTFILES_DIR/macos/karabiner.json"    "$HOME/.config/karabiner/karabiner.json"
 
-# iTerm2 color presets
+# iTerm2
 if [ -d "$DOTFILES_DIR/iterm2" ]; then
+  ITERM_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+
+  # Color presets
   echo ""
   echo "--- iTerm2 Color Presets ---"
   for preset in "$DOTFILES_DIR"/iterm2/*.itermcolors; do
@@ -55,6 +58,39 @@ if [ -d "$DOTFILES_DIR/iterm2" ]; then
     echo "  IMPORT  $name"
   done
   echo "  NOTE: Select the preset in iTerm2 → Settings → Profiles → Colors → Color Presets..."
+
+  # Key mappings
+  if [ -f "$ITERM_PLIST" ]; then
+    echo ""
+    echo "--- iTerm2 Key Mappings ---"
+    KB="New Bookmarks:0:Keyboard Map"
+
+    # Left Option key → Esc+ (단어 단위 이동/삭제 활성화)
+    /usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Option Key Sends' 2" "$ITERM_PLIST" 2>/dev/null
+    echo "  SET     Left Option → Esc+"
+
+    # 기존 매핑 제거 후 재등록 (멱등성 보장)
+    declare -A KEYMAPS=(
+      ["0xf702-0x100000"]="11:0x01"   # Cmd+Left     → 줄 처음 (Ctrl+A)
+      ["0xf703-0x100000"]="11:0x05"   # Cmd+Right    → 줄 끝 (Ctrl+E)
+      ["0x7f-0x100000"]="11:0x15"     # Cmd+Delete   → 줄 전체 삭제 (Ctrl+U)
+      ["0x7f-0x80000"]="11:0x17"      # Opt+Delete   → 단어 삭제 (Ctrl+W)
+    )
+
+    for key in "${!KEYMAPS[@]}"; do
+      IFS=':' read -r action text <<< "${KEYMAPS[$key]}"
+      /usr/libexec/PlistBuddy -c "Delete :'$KB':'$key'" "$ITERM_PLIST" 2>/dev/null || true
+      /usr/libexec/PlistBuddy \
+        -c "Add :'$KB':'$key' dict" \
+        -c "Add :'$KB':'$key':Action integer $action" \
+        -c "Add :'$KB':'$key':Text string $text" \
+        "$ITERM_PLIST"
+    done
+    echo "  SET     Cmd+Left/Right → Home/End"
+    echo "  SET     Cmd+Delete → Clear line"
+    echo "  SET     Opt+Delete → Delete word"
+    echo "  NOTE: Restart iTerm2 for key mapping changes to take effect."
+  fi
 fi
 
 # macOS keyboard shortcuts
