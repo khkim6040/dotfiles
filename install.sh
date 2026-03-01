@@ -30,7 +30,6 @@ echo ""
 
 # Shell
 link_file "$DOTFILES_DIR/shell/.zshrc"    "$HOME/.zshrc"
-link_file "$DOTFILES_DIR/shell/.zshenv"   "$HOME/.zshenv"
 link_file "$DOTFILES_DIR/shell/.profile"  "$HOME/.profile"
 
 # Git
