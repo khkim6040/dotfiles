@@ -43,6 +43,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# OpenClaw Completion
-source "$HOME/.openclaw/completions/openclaw.zsh"
