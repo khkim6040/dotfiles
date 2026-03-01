@@ -5,7 +5,7 @@ macOS 개발 환경 설정 파일 모음.
 ## 구조
 
 ```
-shell/       zshrc, zshenv, profile
+shell/       zshrc, profile
 git/         gitconfig, ssh config
 tools/       npmrc, gh CLI
 macos/       AeroSpace, Karabiner, 키보드 단축키
