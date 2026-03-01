@@ -7,7 +7,7 @@ macOS 개발 환경 설정 파일 모음.
 ```
 shell/       zshrc, zshenv, profile
 git/         gitconfig, ssh config
-tools/       npmrc, testcontainers, gh CLI
+tools/       npmrc, gh CLI
 macos/       AeroSpace, Karabiner
 ```
 

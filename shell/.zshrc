@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use)
 source $ZSH/oh-my-zsh.sh
 
 # Tab으로 autosuggestion 채택 (제안 없으면 기본 탭 완성 동작)
