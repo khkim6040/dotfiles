@@ -14,6 +14,9 @@ _autosuggest_accept_or_complete() {
 zle -N _autosuggest_accept_or_complete
 bindkey '\t' _autosuggest_accept_or_complete
 
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+
 # Android SDK
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
