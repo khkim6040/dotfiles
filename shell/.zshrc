@@ -48,3 +48,11 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# bun completions
+[ -s "/Users/gwanhokim/.bun/_bun" ] && source "/Users/gwanhokim/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
