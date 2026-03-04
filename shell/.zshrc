@@ -31,6 +31,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Aliases
 alias c='claude --dangerously-skip-permissions'
+alias pc='pbcopy'
+alias pp='pbpaste'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
